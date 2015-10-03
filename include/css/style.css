@@ -10,3 +10,15 @@
 .center-text{
     text-align: center;
 }
+
+header{
+	background-color: #f1f1ff;
+}
+
+#content-wrapper{
+	background-color: #f1fff2;
+}
+
+footer{
+	background-color: #fffbf1;
+}
