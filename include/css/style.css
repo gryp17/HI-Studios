@@ -1,0 +1,12 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+.center{
+    margin: auto;
+}
+
+.center-text{
+    text-align: center;
+}

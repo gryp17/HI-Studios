@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>TODO supply a title</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<style>
+
+			.center{
+				margin: auto;
+			}
+
+			.center-text{
+				text-align: center;
+			}
+
+			#container{
+				padding: 160px;
+				width: 1000px;
+				height: 600px;
+				background-color: #ccccff;
+			}
+
+			.square {
+				width: 200px;
+				height: 200px;
+				background-color: red;
+				transform: rotate(45deg);
+			}
+
+			#s2, #s3 {
+				display: inline-block;
+				margin-left: 45px;
+				margin-right: 45px;
+				margin-top: 25px;
+			}
+
+			#s1{
+				margin-bottom: -80px;
+			}
+
+			#s4{
+				margin-top: -55px;
+			}
+
+		</style>
+
+
+	</head>
+	<body>
+		<div id="container" class="center center-text">
+
+			<div id="s1" class="square center">Square 1</div>
+			<div id="s2" class="square">Square 2</div>
+			<div id="s3" class="square">Square 3</div>
+			<div id="s4" class="square center">Square 4</div>
+
+		</div>
+
+
+		<script src="../include/js/jquery-2.1.4.min.js"></script>
+		<script>
+
+			$("#container").hover(function() {
+
+				$(".square").each(function() {
+					var id = $(this).attr('id');
+
+					switch (id) {
+						case 's1':
+							$(this).animate({"margin-top": "-100px"});
+							break;
+						case 's2':
+							$(this).animate({"margin-right": "220px", "margin-top": "200px"});
+							break;
+						case 's3':
+							$(this).animate({"margin-left": "220px", "margin-top": "200px"});
+							break;
+						case 's4':
+							$(this).animate({"margin-top": "165px"});
+							break;
+					}
+
+				});
+
+				$({deg: 45}).animate({deg: 90}, {
+					duration: 500,
+					step: function(now) {
+						// in the step-callback (that is fired each step of the animation),
+						// you can use the `now` paramter which contains the current
+						// animation-position (`0` up to `angle`)
+						$(".square").css({
+							transform: 'rotate(' + now + 'deg)'
+						});
+					}
+				});
+
+
+
+			}, function() {
+				$(".square").each(function() {
+					var id = $(this).attr('id');
+
+					switch (id) {
+						case 's1':
+							$(this).animate({"margin-top": "-80px"});
+							break;
+						case 's2':
+							$(this).animate({"margin-right": "45px", "margin-top": "25px"});
+							break;
+						case 's3':
+							$(this).animate({"margin-left": "45px", "margin-top": "25px"});
+							break;
+						case 's4':
+							$(this).animate({"margin-top": "-55px"});
+							break;
+					}
+				});
+
+				$({deg: 90}).animate({deg: 45}, {
+					duration: 500,
+					step: function(now) {
+						// in the step-callback (that is fired each step of the animation),
+						// you can use the `now` paramter which contains the current
+						// animation-position (`0` up to `angle`)
+						$(".square").css({
+							transform: 'rotate(' + now + 'deg)'
+						});
+					}
+				});
+
+			});
+
+
+		</script>
+
+	</body>
+</html>
