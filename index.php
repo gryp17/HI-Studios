@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="hi-studios" ng-controller="mainController">
+<html ng-app="hi-studios" ng-controller="langController">
     <head>
         <title ng-bind="text['page_title']"></title>
         <meta charset="UTF-8">
@@ -10,7 +10,7 @@
 
     </head>
     <body>
-        <div id="main-wrapper" class="container-fluid">
+        <div id="main-wrapper" class="container-fluid" ng-show="doneLoadingLanguage">
 			<!-- Header -->
             <?php include 'templates/header.php'; ?>
 			
